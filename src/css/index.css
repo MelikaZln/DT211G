@@ -1,0 +1,86 @@
+body{
+    background-color: antiquewhite;
+}
+ /* stila meny navbar */
+.navbar {
+    background-color:  rgb(148, 102, 23);
+    overflow: hidden;
+    
+  }
+  
+  /* stila meny alternativen */
+  .navbar a {
+    float: left;
+    color: bisque;
+    text-align: center;
+    margin-right: 20px;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+   /* stila meny alternativen när man för över musen */
+  .navbar a:hover {
+    background-color: bisque;
+    color:  rgb(148, 102, 23);
+  }
+   /* stila rubriken */
+h1 {
+    font-size: 36px;
+    color: rgb(148, 102, 23);
+    text-align: center;
+    margin-top: 70px;
+}
+
+/* stila texten där uppgiften beskrivs */
+.beskrivning{
+    color:rgb(148, 102, 23);
+    font-size: 24px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+@media only screen and (max-width: 480px){
+  .navbar a {
+    margin-right: 10px;
+    padding: 7px 8px;
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 2px;
+}
+.beskrivning{
+
+  font-size: 20px;
+  text-align: center;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+}
+@media only screen and (max-width: 768px){
+  .navbar a {
+    margin-right: 10px;
+    padding: 10px 10px;
+    font-size: 22px;
+  }
+  h1 {
+    font-size: 32px;
+    margin-top: 32px;
+    margin-bottom: 5px;
+}
+.beskrivning{
+
+  font-size: 22px;
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
+}
+

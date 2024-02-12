@@ -1,0 +1,69 @@
+body{
+  background-color: antiquewhite;
+}
+/* stila meny navbar */
+.navbar {
+  background-color:  rgb(148, 102, 23);
+  overflow: hidden;
+  width: 100%;
+}
+
+/* stila meny alternativen */
+.navbar a {
+  float: left;
+  color: bisque;
+  text-align: center;
+  margin-right: 20px;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+ /* stila meny alternativen när man för över musen */
+.navbar a:hover {
+  background-color: bisque;
+  color:  rgb(148, 102, 23);
+  transition: 0.5s;
+  transform: scale(1.3);
+}
+  .bild{
+    width: 600px;
+   display: flex;
+   flex-direction: row;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 100px;
+   margin-bottom: 100px;
+   border-radius: 20%;
+  }
+  .photoContainer img:hover {
+    transition: 0.5s;
+    transform: scale(1.3);
+    border-radius: 50%;
+  }
+  
+  @media only screen and (max-width: 480px){
+    .navbar a {
+      margin-right: 10px;
+      padding: 7px 8px;
+      font-size: 18px;
+    }
+    .bild{
+      width: 200px;
+     margin-top: 50px;
+     margin-bottom: 50px;
+  }
+}
+  @media only screen and (max-width: 1024px){
+    .navbar a {
+      margin-right: 10px;
+      padding: 10px 10px;
+      font-size: 22px;
+    }
+    .bild{
+      width: 500px;
+     margin-bottom: 70px;
+
+  }
+  
+  }
