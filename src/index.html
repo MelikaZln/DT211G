@@ -3,15 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moment 1</title>
+    <title>Hemsidan</title>
     <script>
       var exports = { __esModule: true };
     </script>
     <script type="module" src="js/one.js"></script>
     <script type="module" src="js/two.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- för att visa hur css minifiering funkar har jag använt en separat css-fil till varje sida -->
   </head>
+  <header>
+    <div class="navbar">
+      <a href="index.html">Hemsidan</a>
+      <a href="bilder.html">Bilder</a>
+      <a href="info.html">Information</a>
+    </div>
+  </header>
   <body>
-    <h1></h1>
+    <h1>Uppgiftsbeskrivning</h1>
+    <p class="beskrivning">
+      I den här uppgiften lär vi oss hur man kan utveckla en webbplats med hjälp
+      av NodeJs som underlättar proccessen. Node js är en JavaScript-miljö, där
+      man kan koda utanför webbläsaren. Istället för att genomföra en del
+      uppgifter manuellt kan man göra dem automatisk via vissa verktyg såsom
+      parcel, gulp etc. I den här uppgiften ska vi optimera vår webbplats så att filerna blir så små som möjligt
+      på så sätt funkar vår webbplats bättre och snabbare. Jag har utfört uppgiften med hjälp av gulp.</br> Dessutom vill vi att webbplatsen publiceras automatisk så 
+      vi slipper ansluta till en server (det vi gjorde i förra kurserna), och ladda upp filerna manuellt. 
+      Man ska kontinuerligt använda Git/Github under uppgiftens gång. Man ska skriva commit under arbetet.</br>
+      Vi ska utveckla en webbplats där det finns HTMl, CSS och JavaScript. 
+      Webbplatsen ska ha tre undersidor (startsida med info - undersida med bilder - undersida med arbetprocessens beskrivning)
+      och webbplatsen måste naturligtvis vara responsiv. 
+    </br> Till slut måste webbplatsen publiceras till webbhost, det kan publiceras på (
 
+    Netlify, Render, Vercel, Github Pages etc). 
+    </p>
   </body>
 </html>
