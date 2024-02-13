@@ -17,14 +17,14 @@ export const files = {
 //Kopierar html 
 export function copyHTML() {
     return src(files.htmlPath)
-    .pipe(dest('pub'));
+    .pipe(dest('docs'));
 }
 //Kopierar CSS
 export function copyCSS() {
     return src(files.CSSPath)
     .pipe(concat('main.css'))
     .pipe(cssnano())
-    .pipe(dest('pub/css'));
+    .pipe(dest('docs/css'));
 }
 //Kopierar JS
 export function copyJS() {
@@ -34,7 +34,7 @@ export function copyJS() {
     .pipe(babel({
       presets: ['@babel/env']
   }))
-    .pipe(dest('pub/js'));
+    .pipe(dest('docs/js'));
 }
 //optimerar bilder
 export function yourImages() {
@@ -50,7 +50,7 @@ export function yourImages() {
         })
       )
   
-      .pipe(dest("pub/images"));
+      .pipe(dest("docs/images"));
   }
 
 
