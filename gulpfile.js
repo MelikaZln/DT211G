@@ -9,7 +9,7 @@ import babel from 'gulp-babel';
 
 // sökvägar
 export const files = {
-    htmlPath: "src/**/*.html",
+    htmlPath: "src/*.html",
     CSSPath: "src/css/*.css",
     JSPath: "src/js/*.js",
     imagePath: "src/images/*"
