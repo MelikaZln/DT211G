@@ -40,6 +40,7 @@ h1 {
     margin-left: 50px;
     margin-right: 50px;
 }
+   /* responsiv design till mobila enheter  */
 @media only screen and (max-width: 480px){
   .navbar a {
     margin-right: 10px;
@@ -62,7 +63,8 @@ h1 {
 }
 
 }
-@media only screen and (max-width: 768px){
+   /* responsiv design till surfplattor */
+@media only screen and (max-width: 1024px){
   .navbar a {
     margin-right: 10px;
     padding: 10px 10px;

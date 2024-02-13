@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv"> <!--har kodat på svenska-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bilders</title>
+    <title>Bilder</title>
     <script>
       var exports = { __esModule: true };
     </script>
+    <!--olika css filer och js filer har använts för att visa hur gulp funkar-->
     <script type="module" src="js/one.js"></script>
     <script type="module" src="js/two.js"></script>
-    <link rel="stylesheet" href="css/bilder.css" />
-    <!-- för att visa hur css minifiering funkar har jag använt en separat css-fil till varje sida -->
+    <link rel="stylesheet" href="../css/bilder.css" />
+
   </head>
   <header>
+    <!--menybaren-->
     <div class="navbar">
       <a href="index.html">Hemsidan</a>
       <a href="bilder.html">Bilder</a>
@@ -20,13 +22,14 @@
     </div>
   </header>
   <body>
+    <!--Bilder i avif format-->
     <div class="photoContainer">
-      <img src="../images/1.png" alt="bild1" class="bild" />
-      <img src="../images/2.jpg" alt="bild2" class="bild" />
-      <img src="../images/3.jpg" alt="bild3" class="bild" />
-      <img src="../images/4.jpg" alt="bild4" class="bild" />
-      <img src="../images/5.jpg" alt="bild5" class="bild" />
-      <img src="../images/6.jpg" alt="bild6" class="bild" />
+      <img src="../images/1.avif" alt="Dubai Mall" class="bild" />
+      <img src="../images/2.avif" alt="Green planet" class="bild" />
+      <img src="../images/3.avif" alt="Magical garden" class="bild" />
+      <img src="../images/4.avif" alt="Future museum" class="bild" />
+      <img src="../images/5.avif" alt="Qeshm island" class="bild" />
+
     </div>
   </body>
 </html>
