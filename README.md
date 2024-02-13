@@ -1,1 +1,1 @@
-# uppgift
+pub/html/info.html
