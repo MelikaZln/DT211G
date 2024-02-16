@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv"> <!--kodats på svenska-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information</title>
+    <script>
+      var exports = { __esModule: true };
+    </script>
+    <!--olika css filer och js filer har använts för att visa hur gulp funkar-->
+    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="../css/main.css" />
+   
+  </head>
+  <header>
+    <!--menybaren-->
+    <div class="navbar">
+      <a href="index.html">Hemsidan</a>
+      <a href="bilder.html">Bilder</a>
+      <a href="info.html">Information</a>
+      <a href="moment2.html">Moment2</a>
+    </div>
+  </header>
+<body>
+  <!--body som innehåller tabellen-->
+    <h1>Webbutveckling Schema</h1>
+    <input type="text" id="searchInput" class="search-input" placeholder="Sök kursen"> <!-- här söker man kursen med kurskod eller kursnamn-->
+    <table id="scheduleTable"> <!--tabellen med schemainformation-->
+        <thead> <!--innehåller rubrik till varje kolumn-->
+            <tr> <!--rad i table head-->
+                <th onclick="sortTable(0)">Kurskod</th> <!--här använder vi js funktionen så att man kan sortera enligt olika rubrikerna-->
+                <th onclick="sortTable(1)">Kursnamn</th>
+                <th onclick="sortTable(2)">Progression</th>
+            </tr>
+        </thead>
+        <tbody id="schedule"> <!--schemainformationen visas upp här-->
+        </tbody>
+    </table>
+</body>
+<script src="js/main.js"></script>
+</html>
