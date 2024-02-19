@@ -7,6 +7,7 @@ body{
     overflow: hidden;
     width: 100%;
   }
+  f
   
   /* stila meny alternativen */
   .navbar a {
@@ -17,6 +18,7 @@ body{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 24px;
+
   }
   
    /* stila meny alternativen när man för över musen */
@@ -28,7 +30,7 @@ body{
   }
    /* stila bilderna */
     .bild{
-      width: 500px;
+     width: 500px;
      display: flex;
      flex-direction: row;
      margin-left: auto;
