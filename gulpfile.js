@@ -6,13 +6,17 @@ import terser from 'gulp-terser';
 import cssnano from 'gulp-cssnano';
 import sharpOptimizeImages from "gulp-sharp-optimize-images";
 import babel from 'gulp-babel';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
 
 // sökvägar
 export const files = {
     htmlPath: "src/*.html",
     CSSPath: "src/css/*.css",
     JSPath: "src/js/*.js",
-    imagePath: "src/images/*"
+    imagePath: "src/images/*",
+    sassPath: "src/scss/*.scss"
 }
 //Kopierar html 
 export function copyHTML() {
@@ -36,6 +40,16 @@ export function copyJS() {
   }))
     .pipe(dest('docs/js'));
 }
+// koplimera sass till css
+export function compileSass() {
+  return src(files.sassPath)
+      .pipe(sass().on('error', sass.logError))
+      .pipe(dest('docs/css'));
+      .pipe(dest('src/css'));
+}
+
+
+
 //optimerar bilder
 export function yourImages() {
     return src(files.imagePath)
@@ -52,16 +66,16 @@ export function yourImages() {
   
       .pipe(dest("docs/images"));
   }
-
+  
 
 // watch-task
 export function watchTask(){
-    parallel(copyCSS, copyJS,yourImages,),
-    watch([files.htmlPath, files.CSSPath, files.JSPath, files.imagePath], parallel(copyHTML, copyCSS, copyJS, ))
+    parallel(copyCSS, copyJS,yourImages,compileSass),
+    watch([files.htmlPath, files.CSSPath, files.JSPath, files.imagePath, files.sassPath], parallel(copyHTML, copyCSS, copyJS,compileSass))
 }
 
 
 export default series ( 
-    parallel(copyCSS, copyJS,yourImages,),
+    parallel(copyCSS, copyJS,yourImages, compileSass),
     watchTask
 )

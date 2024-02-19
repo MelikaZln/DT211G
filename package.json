@@ -602,7 +602,9 @@
     "yauzl": "^2.10.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.23.9"
+    "@babel/preset-env": "^7.23.9",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.71.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
