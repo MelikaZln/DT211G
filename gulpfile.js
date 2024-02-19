@@ -9,6 +9,7 @@ import babel from 'gulp-babel';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
+import removeHtmlComments from 'gulp-remove-html-comments';
 
 // sökvägar
 export const files = {
@@ -21,8 +22,10 @@ export const files = {
 //Kopierar html 
 export function copyHTML() {
     return src(files.htmlPath)
+    .pipe(removeHtmlComments())
     .pipe(dest('docs'));
 }
+
 //Kopierar CSS
 export function copyCSS() {
     return src(files.CSSPath)
@@ -45,7 +48,6 @@ export function compileSass() {
   return src(files.sassPath)
       .pipe(sass().on('error', sass.logError))
       .pipe(dest('docs/css'));
-      .pipe(dest('src/css'));
 }
 
 
