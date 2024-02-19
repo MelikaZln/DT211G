@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv"> <!--har kodat på svenska-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hemsidan</title>
+    <script>
+      var exports = { __esModule: true };
+    </script>
+    <!--olika css filer och js filer har använts för att visa hur gulp funkar-->
+    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="main.scss" />
+   
+  <header>
+    <!--menybaren-->
+    <div class="navbar">
+      <a href="index.html">Hemsidan</a>
+      <a href="bilder.html">Bilder</a>
+      <a href="info.html">Information</a>
+      <a href="moment2.html">Moment2</a>
+      <a href="moment3.html">Moment3</a>
+      <a href="sass.html">SASS</a>
+
+    </div>
+  </header>
+  <body>
+    <!--uppgiftsbeskrivningen-->
+    <h1>Uppgiftsbeskrivning till Moment 3</h1>
+    <p class="textMoment3">
+      Jag har tittat på föreläsningarna om SASS och det verkar vara enekelt att använda men samtidigt ha många funktioner som man inte har i vanligt css.
+      Jag hade aldrig jobbat med det själv innan den här momenten, så det var första gången.
+    </p>
+    <ul class="fordelarSASS"> I den här delen kommer jag att gå igenom fördelarna med SASS:
+      <li class="fordelSASS">Med hjälp av partials kan man ha olika mindre filer så det blir enklare att läsa koden.</li>
+      <li class="fordelSASS">@extend, med hjälp av det behöver man inte upprepa en viss kodrad flera gånger så det blir mycket snabbare att koda!</li>
+      <li class="fordelSASS">Variabler, med hjälp av det nbehöver man inte upprepa egenskaper som färg, font-stiletc om och om igen därför blir allt smidigare!</li>
+      <li class="fordelSASS">Nesting, med den här funktionen kan man koda med bättre stuktur än vanligt CSS.</li>
+      <li class="fordelSASS">Det går att koda i SASS alltså man kan ha metoder, functions precis som JavaScript.</li>
+    </ul>
+    <ul class="nackdelarSASS"> I den här delen kommer jag att gå igenom nackdelarna med SASS:
+      <li class="nackdelSASS">Webbläsarna kan inte läsa SCSS filer därför måste filerna konverteras till vanlig CSS så att de kan läsas in</li>
+      <li class="nackdelSASS">Svår felsökning!</li>
+  </body>
+</html>

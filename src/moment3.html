@@ -3,17 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bilder</title>
+    <title>Hemsidan</title>
     <script>
       var exports = { __esModule: true };
     </script>
     <!--olika css filer och js filer har använts för att visa hur gulp funkar-->
-
     <script type="module" src="js/main.js"></script>
-    <link rel="stylesheet" href="css/bilder.css" />
-    <link rel="stylesheet" href="css/main.css" />
-
-  </head>
+    <link rel="stylesheet" href="main.scss" />
+   
   <header>
     <!--menybaren-->
     <div class="navbar">
@@ -27,13 +24,14 @@
     </div>
   </header>
   <body>
-    <!--Bilder i avif format-->
-    <div class="photoContainer">
-      <img src="images/1.avif" alt="Dubai Mall" class="bild" />
-      <img src="images/2.avif" alt="Green planet" class="bild" />
-      <img src="images/3.avif" alt="Magical garden" class="bild" />
-      <img src="images/4.avif" alt="Future museum" class="bild" />
-      <img src="images/5.avif" alt="Qeshm island" class="bild" />
+    <!--uppgiftsbeskrivningen-->
+    <h1>Moment 3</h1>
+    <p class="textMoment3"> I den här uppgiften ska vi lära oss att arbeta med sass, det är första gången jag gör det. Jag tror att det ska bli kul!
+      I den här sidan kan ni se två bilder jag själv har tagit från Global Village i Dubai.
+    </p>
+    <div class="globalVillagePhoto">
+      <img src="images/1.avif" alt="Italien" class="bild" />
+      <img src="images/1.avif" alt="Global village" class="bild" />
     </div>
   </body>
 </html>
