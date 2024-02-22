@@ -6,7 +6,7 @@ import terser from 'gulp-terser';
 import cssnano from 'gulp-cssnano';
 import sharpOptimizeImages from "gulp-sharp-optimize-images";
 import babel from 'gulp-babel';
-import dartSass from 'sass';
+import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 import removeHtmlComments from 'gulp-remove-html-comments';
