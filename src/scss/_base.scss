@@ -2,10 +2,11 @@ $primary-color: rgb(211, 194, 174);
 $secondary-color:darken($primary-color, 40%)  ;
 $tertiary-color: orange;
 
-$body-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$body-font: 'Arial, Helvetica, sans-serif';
 
 $secondary-color-dark:rgb(211, 194, 174) ;
 $primary-color-dark: darken($secondary-color-dark, 40%);
 
-$breakpoint-small: 480px;
+$breakpoint-small: 640px;
 $breakpoint-medium: 1024px;
+

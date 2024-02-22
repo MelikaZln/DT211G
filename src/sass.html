@@ -3,34 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hemsidan</title>
+    <title>SASS</title>
     <script>
       var exports = { __esModule: true };
     </script>
     <!--olika css filer och js filer har använts för att visa hur gulp funkar-->
-    <script type="module" src="js/main.js"></script>
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="scss/style.scss" />
-   
+
   <header>
     <!--menybaren-->
-    <div class="navbar">
-      <a href="index.html">Hemsidan</a>
-      <a href="bilder.html">Bilder</a>
-      <a href="info.html">Information</a>
-      <a href="moment2.html">Moment2</a>
-      <a href="moment3.html">Moment3</a>
-      <a href="sass.html">SASS</a>
+    <nav class="navbar" id="navbar">
+      <button class="hamburger" id="hamburger-toggle"> 
+        <div class="icon-open">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#DABC8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </div>
+        <div class="icon-close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#827053" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </div>
+      </button>
+      <ul class="navbar-items">
+        <li>
+          <a href="index.html">Hemsidan</a>
+        </li>
+        <li>
+          <a href="bilder.html">Bilder</a>
+        </li>
+        <li>
+          <a href="info.html">Information</a>
+        </li>
+        <li>
+          <a href="moment2.html">Moment2</a>
+        </li>
+        <li>
+          <a href="moment3.html">Moment3</a>
+        </li>
+        <li>
+          <a href="sass.html">SASS</a>
+        </li>
+      </ul>
 
-    </div>
+    </nav>
   </header>
   <body>
     <!--uppgiftsbeskrivningen-->
     <h1>Uppgiftsbeskrivning till Moment 3</h1>
-    <p class="textMoment3">
-      Jag har tittat på föreläsningarna om SASS och det verkar vara enekelt att använda men samtidigt ha många funktioner som man inte har i vanligt css.
-      Jag hade aldrig jobbat med det själv innan den här momenten, så det var första gången.
-    </p>
+     <div class="message1">      Jag har tittat på föreläsningarna om SASS och det verkar vara enekelt att använda men samtidigt ha många funktioner som man inte har i vanligt css.
+      Jag hade aldrig jobbat med det själv innan den här momenten, så det var första gången. </div>
+     <div class="message2"> I början trodde jag att det var svårt att komma igång med SCSS men det var det inte!
+      jag tycker att det är enkelt att koda med SCSS och att det har mycket bättre struktur än CSS och man kan göra flera saker med det så jag hoppas att
+      Webbläsarna stöder det i framtiden så att det blir enklare och använda det. </div>
+     <div class="message3"> Jag kommer att använda det säkert i mina projekt i framtiden.</div>
+     
     <ul class="fordelarSASS"> I den här delen kommer jag att gå igenom fördelarna med SASS:
       <li class="fordelSASS">Med hjälp av partials kan man ha olika mindre filer så det blir enklare att läsa koden.</li>
       <li class="fordelSASS">@extend, med hjälp av det behöver man inte upprepa en viss kodrad flera gånger så det blir mycket snabbare att koda!</li>
@@ -41,5 +75,24 @@
     <ul class="nackdelarSASS"> I den här delen kommer jag att gå igenom nackdelarna med SASS:
       <li class="nackdelSASS">Webbläsarna kan inte läsa SCSS filer därför måste filerna konverteras till vanlig CSS så att de kan läsas in</li>
       <li class="nackdelSASS">Svår felsökning!</li>
+
+  <script type="module" src="js/main.js"> </script>
+  <script>  
+    const hamburgerToggle = document.getElementById("hamburger-toggle");
+    const navbar = document.getElementById("navbar");
+
+    function onHamburgerClick(){
+        if(navbar.classList.contains("open")){
+          navbar.classList.remove("open");
+ 
+
+        } else{
+          navbar.classList.add("open");
+
+        }
+        
+      };
+    hamburgerToggle.addEventListener("click", onHamburgerClick);
+  </script>
   </body>
 </html>

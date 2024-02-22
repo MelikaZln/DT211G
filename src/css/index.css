@@ -7,7 +7,7 @@ body{
     overflow: hidden;
     
   }
-  
+
   /* stila meny alternativen */
   .navbar a {
     float: left;
@@ -133,5 +133,4 @@ th, td {
   margin-right: 40px;
   margin-top: 20px;
 }
-
 }

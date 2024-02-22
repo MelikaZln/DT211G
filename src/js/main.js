@@ -54,3 +54,4 @@ searchInput.addEventListener('input', updateTable); // för varje gång man sök
 
 // hämta schemainformation när sidan laddas
 fetchSchedule();
+
