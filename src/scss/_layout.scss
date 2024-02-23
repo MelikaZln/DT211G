@@ -1,5 +1,6 @@
 @use 'base';
 @use 'keyframes';
+
 @mixin add-text-shadow($font-size, $color) {
   font-size: $font-size;
 
@@ -217,19 +218,36 @@ ul{
   margin-bottom: 100px;
   border-radius: 50%;
   animation: colorChange 0.5s 0s infinite alternate;
-  
+  @media screen and (min-width: base.$breakpoint-small) and (max-width: base.$breakpoint-medium) {
+    width: 150px;
+    height: 150px;
+    margin-top: 8px;
+    margin-bottom: 80px;
+  }
+@media screen and (max-width: base.$breakpoint-small) {
+    width: 100px;
+    height: 100px;
+    margin-top: 8px;
+    margin-bottom: 40px;
+  }
 }
 .container{
   position: relative;
   height: 200px;
-  
+  @media screen and (min-width: base.$breakpoint-small) and (max-width: base.$breakpoint-medium) {
+    height: 150px;
+  }
+@media screen and (max-width: base.$breakpoint-small) {
+  height: 100px;
+  }
   .animation-knapp{
     position: absolute;
-    margin: 0;
+    margin: unset;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    padding-bottom: unset;
       button{
       padding: 8px;
       width: 400px;
@@ -237,22 +255,51 @@ ul{
       border: none;
       border-radius: 30px;
       font-size: 24px;
+      margin: unset;
       color: base.$tertiary-color;
+      @media screen and (min-width: base.$breakpoint-small) and (max-width: base.$breakpoint-medium) {
+        padding: 9px;
+        width: 320px;
+        font-size: 18px;
+      }
+      @media screen and (max-width: base.$breakpoint-small) {
+        padding: 6px;
+        width: 250px;
+        font-size: 14px;
+      }
     }
     
   }
   .button-wrapper{
     position: absolute;
-    margin-top: 450px;
+    margin-top: 430px;
     top: 50%;
     left: 47%;
     padding-bottom: 40px;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    @media screen and (min-width: base.$breakpoint-small) and (max-width: base.$breakpoint-medium) {
+      margin-top: 350px;
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+    @media screen and (max-width: base.$breakpoint-small) {
+      margin-top: 230px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
     #check{
+      padding: unset;
+      margin: unset;
       opacity: 0;
-      width: 70px;
+      width: 50px;
       left: 70%;
+      @media screen and (min-width: base.$breakpoint-small) and (max-width: base.$breakpoint-medium) {
+        width: 40px;
+      }
+      @media screen and (max-width: base.$breakpoint-small) {
+        width: 30px;
+      }
 
     }
       button{
@@ -263,8 +310,19 @@ ul{
       border-radius: 30px;
       font-size: 24px;
       color: base.$tertiary-color;
+      @media screen and (min-width: base.$breakpoint-small) and (max-width: base.$breakpoint-medium) {
+        padding: 8px;
+        width: 150px;
+        font-size: 18px;
+      }
+      @media screen and (max-width: base.$breakpoint-small) {
+        font-size: 14px;
+        width: 100px;
+        padding: 6px;
+        margin-bottom: 30px;
+      }
     }
-    
+
   }
 }
 button:hover{
