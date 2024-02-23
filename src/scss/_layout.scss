@@ -1,5 +1,5 @@
 @use 'base';
-
+@use 'keyframes';
 @mixin add-text-shadow($font-size, $color) {
   font-size: $font-size;
 
@@ -207,3 +207,85 @@ ul{
       color: base.$primary-color-dark;
     }
   }
+.animation-demo{
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(168, 101, 14);
+  margin-top: 10px;
+  margin-bottom: 100px;
+  border-radius: 50%;
+  animation: colorChange 0.5s 0s infinite alternate;
+  
+}
+.container{
+  position: relative;
+  height: 200px;
+  
+  .animation-knapp{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+      button{
+      padding: 8px;
+      width: 400px;
+      background-color: rgb(24, 16, 5);
+      border: none;
+      border-radius: 30px;
+      font-size: 24px;
+      color: base.$tertiary-color;
+    }
+    
+  }
+  .button-wrapper{
+    position: absolute;
+    margin-top: 450px;
+    top: 50%;
+    left: 47%;
+    padding-bottom: 40px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    #check{
+      opacity: 0;
+      width: 70px;
+      left: 70%;
+
+    }
+      button{
+      padding: 8px;
+      width: 200px;
+      background-color: rgb(24, 16, 5);
+      border: none;
+      border-radius: 30px;
+      font-size: 24px;
+      color: base.$tertiary-color;
+    }
+    
+  }
+}
+button:hover{
+  animation: clickChange 1s ;
+}
+animation-bild{
+  margin-left: auto;
+  margin-right: auto;
+  img{
+    width: 400px;
+    
+  }
+}
+.animation-bild:hover{
+  animation: rotationChange 0.8s 0s infinite alternate;
+}
+
+
+.btnAnimation{
+  animation: animate 2s ease-in forwards ;
+}
+.checkAnimation{
+  animation: animateCheck 2s 0.7s ease-in forwards ;
+}

@@ -1,3 +1,53 @@
+@keyframes colorChange {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  25% {
+    background-color: blanchedalmond;
+    transform: translate(20%, -20%);
+  }
+  50% {
+    background-color: rgb(186, 128, 57);
+    transform: translate(40%, 40%);
+  }
+  100% {
+    background-color: rgb(145, 85, 13);
+    transform: translate(-80%, 30%);
+  }
+}
+@keyframes rotationChange {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+@keyframes clickChange {
+  to {
+    transform: scale(1.8);
+    background-color: blanchedalmond;
+  }
+}
+@keyframes animate {
+  0% {
+    color: transparent;
+    width: 16rem;
+  }
+  50% {
+    width: 8rem;
+    background-color: rgb(246, 178, 139);
+  }
+  100% {
+    background-color: rgb(246, 178, 139) rgb(253, 214, 181);
+  }
+}
+@keyframes animateCheck {
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
 .navbar {
   background-color: #755d40;
   color: rgb(211, 194, 174);
@@ -214,4 +264,84 @@ ul li {
     background-color: rgb(211, 194, 174);
     color: #755d40;
   }
+}
+.animation-demo {
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(168, 101, 14);
+  margin-top: 10px;
+  margin-bottom: 100px;
+  border-radius: 50%;
+  animation: colorChange 0.5s 0s infinite alternate;
+}
+
+.container {
+  position: relative;
+  height: 200px;
+}
+.container .animation-knapp {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.container .animation-knapp button {
+  padding: 8px;
+  width: 400px;
+  background-color: rgb(24, 16, 5);
+  border: none;
+  border-radius: 30px;
+  font-size: 24px;
+  color: orange;
+}
+.container .button-wrapper {
+  position: absolute;
+  margin-top: 450px;
+  top: 50%;
+  left: 47%;
+  padding-bottom: 40px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.container .button-wrapper #check {
+  opacity: 0;
+  width: 70px;
+  left: 70%;
+}
+.container .button-wrapper button {
+  padding: 8px;
+  width: 200px;
+  background-color: rgb(24, 16, 5);
+  border: none;
+  border-radius: 30px;
+  font-size: 24px;
+  color: orange;
+}
+
+button:hover {
+  animation: clickChange 1s;
+}
+
+animation-bild {
+  margin-left: auto;
+  margin-right: auto;
+}
+animation-bild img {
+  width: 400px;
+}
+
+.animation-bild:hover {
+  animation: rotationChange 0.8s 0s infinite alternate;
+}
+
+.btnAnimation {
+  animation: animate 2s ease-in forwards;
+}
+
+.checkAnimation {
+  animation: animateCheck 2s 0.7s ease-in forwards;
 }

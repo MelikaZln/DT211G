@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv"> <!--har kodat på svenska-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animering</title>
+    <script>
+      var exports = { __esModule: true };
+    </script>
+    <!--olika css filer och js filer har använts för att visa hur gulp funkar-->
+    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="scss/style.scss" />
+   
+  <header>
+    <!--menybaren-->
+    <nav class="navbar" id="navbar">
+      <button class="hamburger" id="hamburger-toggle"> 
+        <div class="icon-open">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#DABC8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </div>
+        <div class="icon-close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#827053" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </div>
+      </button>
+      <ul class="navbar-items">
+        <li>
+          <a href="index.html">Hemsidan</a>
+        </li>
+        <li>
+          <a href="bilder.html">Bilder</a>
+        </li>
+        <li>
+          <a href="info.html">Information</a>
+        </li>
+        <li>
+          <a href="moment2.html">Moment2</a>
+        </li>
+        <li>
+          <a href="moment3.html">Moment3</a>
+        </li>
+        <li>
+          <a href="sass.html">SASS</a>
+        </li>
+        <li>
+          <a href="Animering.html">Animering</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <!--uppgiftsbeskrivningen-->
+    <h1>Animering</h1>
+    <div class="animation-bild"><img src="images/8.avif" alt="en bild på mig själv"></div>
+    <div class="container">
+      <div class="animation-knapp" id="knapp"><button>Tryck här om du kan fånga bollen!</button></div>
+      <div class="button-wrapper">
+        <svg id="check" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 50 50">
+          <path d="M 42.875 8.625 C 42.84375 8.632813 42.8125 8.644531 42.78125 8.65625 C 42.519531 8.722656 42.292969 8.890625 42.15625 9.125 L 21.71875 40.8125 L 7.65625 28.125 C 7.410156 27.8125 7 27.675781 6.613281 27.777344 C 6.226563 27.878906 5.941406 28.203125 5.882813 28.597656 C 5.824219 28.992188 6.003906 29.382813 6.34375 29.59375 L 21.25 43.09375 C 21.46875 43.285156 21.761719 43.371094 22.050781 43.328125 C 22.339844 43.285156 22.59375 43.121094 22.75 42.875 L 43.84375 10.1875 C 44.074219 9.859375 44.085938 9.425781 43.875 9.085938 C 43.664063 8.746094 43.269531 8.566406 42.875 8.625 Z"></path>
+          </svg>
+          <button id="button">Spelat!</button>
+      </div>
+    </div>
+    
+    <div class="animation-demo" ></div>
+    
+
+   
+    <script type="module" src="js/main.js"> </script>
+    <script type="module" >  
+      const hamburgerToggle = document.getElementById("hamburger-toggle");
+      const navbar = document.getElementById("navbar");
+      const knapp = document.getElementById("knapp");
+      const btn= document.getElementById('button');
+      const ceck= document.getElementById("check");
+      function onHamburgerClick(){
+          if(navbar.classList.contains("open")){
+            navbar.classList.remove("open");
+   
+  
+          } else{
+            navbar.classList.add("open");
+  
+          }
+          
+        };
+        function result(){
+          alert("Bra jobbat");
+          knapp.style.color = "red";
+        }
+        function btnAnimation(){
+          btn.classList.add("btnAnimation");
+          check.classList.add("checkAnimation");
+
+          setTimeout(function(){
+            btn.classList.remove("btnAnimation");
+            btn.classList.remove("checkAnimation");
+          });
+        }
+      btn.addEventListener("click", btnAnimation)
+      hamburgerToggle.addEventListener("click", onHamburgerClick);
+      knapp.addEventListener("click", result);
+    </script>
+  </body>
+</html>
