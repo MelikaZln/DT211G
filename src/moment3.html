@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moment3</title>
+    <title>SASS</title>
     <script>
       var exports = { __esModule: true };
     </script>
     <!--olika css filer och js filer har använts för att visa hur gulp funkar-->
-    <script type="module" src="js/main.js"></script>
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="scss/style.scss" />
-   
+
   <header>
     <!--menybaren-->
     <nav class="navbar" id="navbar">
@@ -67,5 +67,24 @@
       <img src="images/7.avif" alt="Italien" class="bild" />
       <img src="images/6.avif" alt="Global village" class="bild" />
     </div>
+
+  <script type="module" src="js/main.js"> </script>
+  <script type="module" >  
+    const hamburgerToggle = document.getElementById("hamburger-toggle");
+    const navbar = document.getElementById("navbar");
+
+    function onHamburgerClick(){
+        if(navbar.classList.contains("open")){
+          navbar.classList.remove("open");
+ 
+
+        } else{
+          navbar.classList.add("open");
+
+        }
+        
+      };
+    hamburgerToggle.addEventListener("click", onHamburgerClick);
+  </script>
   </body>
 </html>
