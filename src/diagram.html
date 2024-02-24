@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="sv"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagram</title>
+    <script>
+      var exports = { __esModule: true };
+    </script>
+    
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="scss/style.scss" />
+
+  <header>
+    
+    <nav class="navbar" id="navbar">
+      <button class="hamburger" id="hamburger-toggle"> 
+        <div class="icon-open">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#DABC8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 6l16 0" />
+            <path d="M4 12l16 0" />
+            <path d="M4 18l16 0" />
+          </svg>
+        </div>
+        <div class="icon-close">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#827053" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </div>
+      </button>
+      <ul class="navbar-items">
+        <li>
+          <a href="index.html">Hemsidan</a>
+        </li>
+        <li>
+          <a href="bilder.html">Bilder</a>
+        </li>
+        <li>
+          <a href="info.html">Information</a>
+        </li>
+        <li>
+          <a href="moment2.html">Moment2</a>
+        </li>
+        <li>
+          <a href="moment3.html">Moment3</a>
+        </li>
+        <li>
+          <a href="sass.html">SASS</a>
+        </li>
+        <li>
+          <a href="Animering.html">Animering</a>
+        </li>
+        <li>
+          <a href="karta.html">Karta</a>
+        </li>
+        <li>
+          <a href="diagram.html">Diagram</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body onload="loadData()" style="background-color: rgb(147, 145, 145);">
+
+    
+    <h1>Diagram</h1>
+    <canvas id="myChart"></canvas>
+    <canvas id="myPie"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
+  <script type="module" src="js/main.js"> </script>
+  <script> 
+  let course ;
+let program;
+
+function loadData(){
+    fetch ('https://studenter.miun.se/~mallar/dt211g/')
+    .then(response => response.json() )
+    .then( data => {
+            filterData2(data);
+            convertData();
+            sortData();
+            filterTop();
+            createChart();
+            createPie();
+            console.log(program, course)
+    })
+}
+function filterData2 (data){
+    course = data.filter(
+        (item) => {
+         return item.type== 'Kurs';
+        }
+     )
+     program = data.filter(
+         (item) => {
+          return item.type== 'Program';
+         }
+      )
+}
+
+function convertData(){
+    course = course.map(
+        (item) => {
+            return (
+                {
+                    type: item.type,
+                    name: item.name,
+                    admissionRound: item.admissionRound,
+                    applicantsFirstHand: item.applicantsFirstHand,
+                    applicantsTotal: Number(item.applicantsTotal)
+                }
+            )
+        }
+    )
+    program = program.map(
+        (item) => {
+            return (
+                {
+                    type: item.type,
+                    name: item.name,
+                    admissionRound: item.admissionRound,
+                    applicantsFirstHand: item.applicantsFirstHand,
+                    applicantsTotal: Number(item.applicantsTotal)
+                }
+            )
+        }
+    )
+}
+
+function sortData(){
+    course = course.sort(
+        (a,b)=> {
+            return b.applicantsTotal - a.applicantsTotal;
+        }
+    )
+
+    program = program.sort(
+        (a,b)=> {
+            return b.applicantsTotal - a.applicantsTotal;
+        }
+    )
+}
+function filterTop(){
+    course = course.slice(0,6);
+    program = program.slice(0,5)
+}
+function createChart(){
+
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: course.map(item => item.name),
+      datasets: [{
+        label: 'Mest sökta kurser',
+        data: course.map(item => item.applicantsTotal),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+}
+function createPie(){
+
+    const ctx = document.getElementById('myPie');
+  
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: program.map(item => item.name),
+        datasets: [{
+          label: 'Mest sökta program',
+          data: program.map(item => item.applicantsTotal),
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+  }
+  
+
+  </script>
+ 
+
+
+  <script type="module" src="js/main.js"> </script>
+  <script type="module" >  
+    const hamburgerToggle = document.getElementById("hamburger-toggle");
+    const navbar = document.getElementById("navbar");
+
+    function onHamburgerClick(){
+        if(navbar.classList.contains("open")){
+          navbar.classList.remove("open");
+ 
+
+        } else{
+          navbar.classList.add("open");
+
+        }
+        
+      };
+    hamburgerToggle.addEventListener("click", onHamburgerClick);
+  </script>
+  </body>
+</html>
