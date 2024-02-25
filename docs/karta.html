@@ -38,7 +38,7 @@
     <script>
         var map;
         var marker;
-        function finalMap(){ 
+        function finalMap(){ //ibland försvann kartan när jag laddade om sidan därför skrev jag detta
             initMap();
             searchLocation();
             showMap();
@@ -50,7 +50,7 @@
                 zoom: 15
             });
             
-
+            // Skapa en markör och placera den på den givna positionen
             marker = new google.maps.Marker({
                 position: {lat: 35.8454291, lng: 50.9850307},
                 map: map
@@ -75,7 +75,7 @@
 
         function showMap(lat, lng) {
             map.setCenter({lat: lat, lng: lng});
-
+            // Uppdatera markörens position
             marker.setPosition({lat: lat, lng: lng});
         }
     </script>

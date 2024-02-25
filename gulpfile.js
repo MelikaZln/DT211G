@@ -78,6 +78,6 @@ export function watchTask(){
 
 
 export default series ( 
-    parallel(copyCSS, copyJS,yourImages, compileSass),
+    parallel(copyCSS, copyHTML, copyJS,yourImages, compileSass),
     watchTask
 )
