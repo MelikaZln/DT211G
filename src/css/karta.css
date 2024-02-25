@@ -1,0 +1,65 @@
+#map{
+    width: 500px;
+    height: 500px;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#locationInput{
+    border-radius: 10px;
+    width: 200px;
+    border: 3px solid rgb(227, 152, 39);
+    padding: 10px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.location-btn{
+    border-radius: 10px;
+    width: 90px;
+    border: 3px solid rgb(227, 152, 39);
+    padding: 10px;
+    color: rgb(227, 152, 39);
+    background-color: antiquewhite;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 8px;
+    margin-bottom: 40px;
+}
+@media only screen and (max-width: 480px){
+    #map{
+        width: 280px;
+        height: 280px;
+    }
+    #locationInput{
+        width: 150px;
+        padding: 6px;
+        margin-top: 15px;
+    }
+    .location-btn{
+        width: 50px;
+        padding: 4px;
+        margin-top: 8px;
+        margin-bottom: 25px;
+    }
+}
+@media only screen and (min-width: 480px) and(max-width: 700px){
+    #map{
+        width: 300px;
+        height: 300px;
+    }  
+    #locationInput{
+        width: 180px;
+        margin-top: 18px;
+    }
+    .location-btn{
+        width: 700px;
+        margin-bottom: 30px;
+    }
+}

@@ -120,7 +120,7 @@ div{
         flex-direction: row;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 50px;
+ 
         margin-bottom: 80px;
         @media screen and (min-width: base.$breakpoint-small) and (max-width: base.$breakpoint-medium) {
             width: 400px; 
@@ -347,4 +347,8 @@ animation-bild{
 }
 .checkAnimation{
   animation: animateCheck 2s 0.7s ease-in forwards ;
+}
+.map{
+  width: 600px; 
+  height: 450px;
 }

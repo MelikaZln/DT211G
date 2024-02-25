@@ -3,93 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SASS</title>
+    <title>Karta</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk0H6dAN4dGQG0-wGRIWJ0OAjWzwoGASw&callback=initMap" async defer></script>
     <script>
       var exports = { __esModule: true };
     </script>
     
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="scss/style.scss" />
-
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/karta.css" />
+   
   <header>
     
-    <nav class="navbar" id="navbar">
-      <button class="hamburger" id="hamburger-toggle"> 
-        <div class="icon-open">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#DABC8B" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M4 6l16 0" />
-            <path d="M4 12l16 0" />
-            <path d="M4 18l16 0" />
-          </svg>
-        </div>
-        <div class="icon-close">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#827053" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M18 6l-12 12" />
-            <path d="M6 6l12 12" />
-          </svg>
-        </div>
-      </button>
-      <ul class="navbar-items">
-        <li>
-          <a href="index.html">Hemsidan</a>
-        </li>
-        <li>
-          <a href="bilder.html">Bilder</a>
-        </li>
-        <li>
-          <a href="info.html">Information</a>
-        </li>
-        <li>
-          <a href="moment2.html">Moment2</a>
-        </li>
-        <li>
-          <a href="moment3.html">Moment3</a>
-        </li>
-        <li>
-          <a href="sass.html">SASS</a>
-        </li>
-        <li>
-          <a href="Animering.html">Animering</a>
-        </li>        
-        <li>
-            <a href="karta.html">Karta</a>
-          </li>
-          <li>
-            <a href="diagram.html">Diagram</a>
-          </li>
-      </ul>
-    </nav>
-  </header>
-  <body>
     
+    <div class="navbar" id="menu">
+      <a href="index.html">Hemsidan</a>
+      <a href="bilder.html">Bilder</a>
+      <a href="info.html">Information</a>
+      <a href="moment2.html">Moment2</a>
+      <a href="moment3.html">Moment3</a>
+      <a href="sass.html">SASS</a>
+      <a href="Animering.html">Animering</a>
+      <a href="karta.html">Karta</a>
+      <a href="diagram.html">Diagram</a>
+    </div>
+  </header>
+  <body onload="finalMap()">
+    
+    <h1>Karta</h1>
+    <div class="location-container"><input type="text" id="locationInput" placeholder="Sök din destination!">    <button onclick="searchLocation()" class="location-btn">Sök</button></div>
 
-
-
-
-
-
-
-
-  <script type="module" src="js/main.js"> </script>
-  <script type="module" >  
-    const hamburgerToggle = document.getElementById("hamburger-toggle");
-    const navbar = document.getElementById("navbar");
-
-    function onHamburgerClick(){
-        if(navbar.classList.contains("open")){
-          navbar.classList.remove("open");
- 
-
-        } else{
-          navbar.classList.add("open");
+    <div id="map" ></div>
+    <script>
+        var map;
+        var marker;
+        function finalMap(){ 
+            initMap();
+            searchLocation();
+            showMap();
 
         }
-        
-      };
-    hamburgerToggle.addEventListener("click", onHamburgerClick);
-  </script>
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 35.8454291, lng: 50.9850307},
+                zoom: 15
+            });
+            
+
+            marker = new google.maps.Marker({
+                position: {lat: 35.8454291, lng: 50.9850307},
+                map: map
+            });
+        }
+
+        function searchLocation() {
+            var location = document.getElementById('locationInput').value;
+            fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBk0H6dAN4dGQG0-wGRIWJ0OAjWzwoGASw&address=${location}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results && data.results.length > 0 && data.results[0].geometry && data.results[0].geometry.location) {
+                        var lat = data.results[0].geometry.location.lat;
+                        var lng = data.results[0].geometry.location.lng;
+                        showMap(lat, lng);
+                    } else {
+                        console.error('Invalid data format:', data);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function showMap(lat, lng) {
+            map.setCenter({lat: lat, lng: lng});
+
+            marker.setPosition({lat: lat, lng: lng});
+        }
+    </script>
+
   </body>
 </html>
