@@ -17,7 +17,7 @@ export const files = {
     CSSPath: "src/css/*.css",
     JSPath: "src/js/*.js",
     imagePath: "src/images/*",
-    sassPath: "src/scss/*.scss"
+    sassPath: "src/scss/*.scss",
 }
 //Kopierar html 
 export function copyHTML() {
