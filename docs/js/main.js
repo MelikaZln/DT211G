@@ -207,7 +207,7 @@ function getTimezone() {
 }
 function getWeather() {
   var e = document.getElementById("cityInput").value;
-  fetch("http://api.openweathermap.org/data/2.5/weather?q=".concat(e, "&appid=cd57e09d6d65c8196f784c17892e4f50")).then(function (e) {
+  fetch("https://api.openweathermap.org/data/2.5/weather?q=".concat(e, "&appid=cd57e09d6d65c8196f784c17892e4f50")).then(function (e) {
     return e.json();
   }).then(function (e) {
     var t = document.getElementById("weather-info");
