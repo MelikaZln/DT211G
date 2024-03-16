@@ -81,7 +81,7 @@ function getWeather() {
     // Ange API-nyckel för OpenWeatherMap
     var apiKey = "cd57e09d6d65c8196f784c17892e4f50";
     // Konstruera URL för att hämta väderdata för den angivna staden
-    var apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
     // Använd fetch för att hämta väderdata från OpenWeatherMap API
     fetch(apiUrl)
