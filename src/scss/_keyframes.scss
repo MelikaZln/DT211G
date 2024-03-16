@@ -20,10 +20,10 @@
 
 @keyframes rotationChange{
     from{
-        transform: rotate(-3deg);
+        transform: rotate(0deg);
     }
     to{
-        transform: rotate(3deg );
+        transform: rotate(360deg );
     }
 }
 @keyframes clickChange{
